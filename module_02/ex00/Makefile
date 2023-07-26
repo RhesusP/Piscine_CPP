@@ -5,13 +5,13 @@
 #                                                     +:+ +:+         +:+      #
 #    By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/07/10 14:33:24 by cbernot           #+#    #+#              #
-#    Updated: 2023/07/23 18:31:59 by cbernot          ###   ########.fr        #
+#    Created: 2023/07/23 18:27:15 by cbernot           #+#    #+#              #
+#    Updated: 2023/07/23 18:32:41 by cbernot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=Harl
-SRCS=main.cpp Harl.cpp
+NAME=Fixed
+SRCS=main.cpp Fixed.cpp 
 OBJS=$(SRCS:.cpp=.o)
 INCLUDES=Harl.hpp
 CC=c++
@@ -19,7 +19,7 @@ CFLAGS=-Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(INCLUDES)
+$(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
 %.o: %.cpp $(INCLUDES)
