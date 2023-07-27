@@ -6,12 +6,13 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 02:38:09 by cbernot           #+#    #+#             */
-/*   Updated: 2023/07/05 10:36:20 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/07/27 12:51:54 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./PhoneBook.hpp"
 #include <iomanip>
+#include <stdlib.h>
 #include <typeinfo>
 
 /* ------------- CONSTRUCTOR AND DESTRUCTOR ------------- */
@@ -31,7 +32,6 @@ void PhoneBook::add_contact() {
 	Contact		*oldest;
 	int			is_syntax_valid;
 
-	system("clear");
 	std::cout << "#####################################################################" << std::endl;
 	std::cout << "#                            ADD A CONTACT                          #" << std::endl;
 	std::cout << "#####################################################################" << std::endl << std::endl;
@@ -74,7 +74,6 @@ void	PhoneBook::search_contact() {
 	std::string	index;
 	int			is_syntax_valid;
 
-	system("clear");
 	std::cout << "#####################################################################" << std::endl;
 	std::cout << "#                             CONTACT LIST                          #" << std::endl;
 	std::cout << "#####################################################################" << std::endl << std::endl;
@@ -142,7 +141,7 @@ int PhoneBook::check_input(std::string input) {
 			return (-1);
 		}
 	}
-	eger = stoi(input);
+	eger = atoi(input.c_str());
 	if (eger < 0 || eger > 7) {
 		std::cout << "Input is not a valid index" << std::endl;
 		return (-1);
