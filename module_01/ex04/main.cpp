@@ -6,14 +6,13 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 18:06:13 by cbernot           #+#    #+#             */
-/*   Updated: 2023/07/17 15:45:56 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/07/27 13:44:03 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
 
-// ./prog filename s1 s2
 int	main(int argc, char **argv) {
 	char		*filename;
 	std::string	line;
@@ -27,7 +26,7 @@ int	main(int argc, char **argv) {
 	std::string s1 = std::string(argv[2]);
 	std::string s2 = std::string(argv[3]);
 	std::ifstream	file(filename);
-	std::ofstream	outfile(filename + std::string(".replace"));
+	std::ofstream outfile(std::string(filename).append(".replace").c_str());
 	int i;
 	while (std::getline(file, line))
 	{
