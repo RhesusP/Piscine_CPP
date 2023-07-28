@@ -6,11 +6,13 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 11:27:33 by cbernot           #+#    #+#             */
-/*   Updated: 2023/07/28 12:09:03 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/07/28 15:46:17 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#ifndef POINT_HPP
+# define POINT_HPP
+# include "Fixed.hpp"
 
 class Point
 {
@@ -28,3 +30,5 @@ class Point
 };
 
 bool	bsp( Point const a, Point const b, Point const c, Point const point);
+
+#endif

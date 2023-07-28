@@ -6,11 +6,13 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 12:11:35 by cbernot           #+#    #+#             */
-/*   Updated: 2023/07/27 13:33:59 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/07/28 15:44:20 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef FIXED_HPP
+# define FIXED_HPP
+# include <iostream>
 
 class Fixed
 {
@@ -25,3 +27,5 @@ class Fixed
 		int	getRawBits(void) const;
 		void setRawBits(int const raw);
 };
+
+#endif

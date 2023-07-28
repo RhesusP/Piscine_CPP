@@ -6,11 +6,13 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 12:11:35 by cbernot           #+#    #+#             */
-/*   Updated: 2023/07/28 11:21:43 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/07/28 15:45:37 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef FIXED_HPP
+# define FIXED_HPP
+# include <iostream>
 
 class Fixed
 {
@@ -55,3 +57,5 @@ class Fixed
 };
 
 std::ostream & operator<<(std::ostream & o, Fixed const &rhs);
+
+#endif
