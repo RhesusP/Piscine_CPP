@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/28 14:04:57 by cbernot           #+#    #+#             */
-/*   Updated: 2023/07/28 15:26:22 by cbernot          ###   ########.fr       */
+/*   Created: 2023/07/28 15:00:20 by cbernot           #+#    #+#             */
+/*   Updated: 2023/07/28 15:38:28 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-int	main(void) {
-	ClapTrap	bob("Bob");
-	ClapTrap	todd("Todd");
+# include "ClapTrap.hpp"
 
-	bob.attack("Todd");
-	todd.takeDamage(1);
-	std::cout << bob << std::endl << todd << std::endl;
-	return (0);
-}
+class ScavTrap : public ClapTrap
+{
+	public:
+		ScavTrap(std::string name);
+		ScavTrap(ScavTrap const & rhs);
+		ScavTrap& operator=(ScavTrap const &rhs);
+		~ScavTrap();
+		void guardGate(void);
+};
+
+#endif

@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/28 14:04:57 by cbernot           #+#    #+#             */
-/*   Updated: 2023/07/28 15:26:22 by cbernot          ###   ########.fr       */
+/*   Created: 2023/07/28 15:29:19 by cbernot           #+#    #+#             */
+/*   Updated: 2023/07/28 15:38:10 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-int	main(void) {
-	ClapTrap	bob("Bob");
-	ClapTrap	todd("Todd");
+# include "ClapTrap.hpp"
 
-	bob.attack("Todd");
-	todd.takeDamage(1);
-	std::cout << bob << std::endl << todd << std::endl;
-	return (0);
-}
+class FragTrap : public ClapTrap
+{
+	public:
+		FragTrap(std::string name);
+		FragTrap(FragTrap const & rhs);
+		FragTrap& operator=(FragTrap const &rhs);
+		~FragTrap();
+		void highFivesGuys(void);
+};
+
+#endif

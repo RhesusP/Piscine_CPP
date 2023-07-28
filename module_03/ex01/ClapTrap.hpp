@@ -6,19 +6,18 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 13:43:33 by cbernot           #+#    #+#             */
-/*   Updated: 2023/07/28 15:36:21 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/07/28 15:36:45 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLAPTRAP_HPP
 # define CLAPTRAP_HPP
-
 # include <iostream>
 # include <string>
 
 class ClapTrap
 {
-	private:
+	protected:
 		std::string	_name;
 		int			_hit;
 		int			_energy;
@@ -26,6 +25,7 @@ class ClapTrap
 	public:
 		ClapTrap(std::string name);
 		ClapTrap(ClapTrap const & c);
+		ClapTrap(std::string name, int hit, int energy, int attack);
 		ClapTrap& operator=(ClapTrap const &rhs);
 		~ClapTrap();
 		void attack(const std::string& target);
