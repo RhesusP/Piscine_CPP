@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 18:27:19 by cbernot           #+#    #+#             */
-/*   Updated: 2023/07/28 11:24:55 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/07/28 12:19:04 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,7 @@ Fixed::Fixed(Fixed const &rhs) {
 	*this = rhs;
 }
 
-Fixed::~Fixed(void) {
-}
+Fixed::~Fixed(void) { }
 
 /* --------- Getter  and setter --------- */
 int	Fixed::getRawBits(void) const {
