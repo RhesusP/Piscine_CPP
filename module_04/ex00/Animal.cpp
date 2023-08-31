@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:01:32 by cbernot           #+#    #+#             */
-/*   Updated: 2023/08/31 21:19:49 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/08/31 21:44:20 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ Animal::Animal(void) {
 }
 
 Animal::Animal(Animal const & a) {
+	std::cout << "An Animal has been created by copy constructor." << std::endl;
 	*this = a;
 }
 
