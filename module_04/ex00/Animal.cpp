@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:01:32 by cbernot           #+#    #+#             */
-/*   Updated: 2023/08/31 15:35:08 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/08/31 21:19:49 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 Animal::Animal(void) {
 	std::cout << "An Animal has been created." << std::endl;
+}
+
+Animal::Animal(Animal const & a) {
+	*this = a;
 }
 
 Animal::~Animal(void) {
@@ -26,4 +30,9 @@ void	Animal::makeSound(void) const {
 
 std::string	Animal::getType(void) const {
 	return (this->type);
+}
+
+Animal&	Animal::operator=(Animal const & rhs) {
+	this->type = rhs.type;
+	return (*this);
 }

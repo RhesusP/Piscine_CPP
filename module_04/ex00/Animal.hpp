@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:50:38 by cbernot           #+#    #+#             */
-/*   Updated: 2023/08/31 16:33:27 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/08/31 21:27:24 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,11 @@ class Animal
 		std::string	type;
 	public:
 		Animal(void);
+		Animal(Animal const & a);
 		virtual ~Animal(void);
 		virtual void	makeSound(void) const;
 		std::string	getType(void) const;
+		virtual Animal&	operator=(Animal const & rhs);
 };
 
 #endif
