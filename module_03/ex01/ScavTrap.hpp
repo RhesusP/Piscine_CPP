@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:00:20 by cbernot           #+#    #+#             */
-/*   Updated: 2023/07/28 15:37:16 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/09/08 10:57:05 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 
 class ScavTrap : public ClapTrap
 {
+	private:
+		ScavTrap(void);
 	public:
 		ScavTrap(std::string name);
 		ScavTrap(ScavTrap const & rhs);

@@ -6,11 +6,15 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:29:16 by cbernot           #+#    #+#             */
-/*   Updated: 2023/07/28 15:31:32 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/09/08 10:58:33 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
+
+FragTrap::FragTrap(void) : ClapTrap("FragTrap", 100, 100, 30) {
+	std::cout << "FragTrap " << _name << " created" << std::endl;
+}
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name, 100, 100, 30) {
 	std::cout << "FragTrap " << _name << " created" << std::endl;

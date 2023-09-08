@@ -6,11 +6,15 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:07:20 by cbernot           #+#    #+#             */
-/*   Updated: 2023/07/28 15:23:25 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/09/08 10:57:33 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
+
+ScavTrap::ScavTrap(void) : ClapTrap("ScavTrap", 100, 50, 20) {
+	std::cout << "ScavTrap " << _name << " created" << std::endl;
+}
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 100, 50, 20) {
 	std::cout << "ScavTrap " << _name << " created" << std::endl;

@@ -6,11 +6,19 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 13:47:41 by cbernot           #+#    #+#             */
-/*   Updated: 2023/07/28 15:03:38 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/09/08 10:56:53 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
+ClapTrap::ClapTrap(void) {
+	_name = "ClapTrap";
+	_hit = 10;
+	_energy = 10;
+	_attack = 0;
+	std::cout << "ClapTrap " << _name << " created" << std::endl;
+}
 
 ClapTrap::ClapTrap(std::string name) {
 	_name = name;

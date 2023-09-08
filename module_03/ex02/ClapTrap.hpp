@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 13:43:33 by cbernot           #+#    #+#             */
-/*   Updated: 2023/07/28 15:37:42 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/09/08 10:55:52 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class ClapTrap
 		int			_hit;
 		int			_energy;
 		int			_attack;
+		ClapTrap(void);
 	public:
 		ClapTrap(std::string name);
 		ClapTrap(ClapTrap const & c);
