@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 13:47:41 by cbernot           #+#    #+#             */
-/*   Updated: 2023/09/08 10:56:26 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/09/08 13:14:17 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ ClapTrap::ClapTrap(std::string name) {
 
 ClapTrap::ClapTrap(ClapTrap const & c) {
 	*this = c;
+	std::cout << "ClapTrap " << _name << " created by copy constructor" << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(ClapTrap const &rhs) {

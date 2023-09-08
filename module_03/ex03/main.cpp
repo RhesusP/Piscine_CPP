@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 14:04:57 by cbernot           #+#    #+#             */
-/*   Updated: 2023/09/08 10:55:29 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/09/08 13:39:25 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,10 @@ int	main(void) {
 	// jeanne.guardGate();
 
 	DiamondTrap	diamond("Pierre");
-	std::cout << diamond << std::endl;
+	std::cout << std::endl << diamond << std::endl;
 	diamond.whoAmI();
+	diamond.attack("toto");
 	diamond.guardGate();
+	std::cout << std::endl;
 	return (0);
 }

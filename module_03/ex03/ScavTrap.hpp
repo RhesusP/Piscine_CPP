@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:00:20 by cbernot           #+#    #+#             */
-/*   Updated: 2023/09/08 10:17:59 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/09/08 13:33:13 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class ScavTrap : public virtual ClapTrap
 		ScavTrap(ScavTrap const & rhs);
 		ScavTrap& operator=(ScavTrap const &rhs);
 		~ScavTrap();
+		void attack(const std::string& target);
 		void guardGate(void);
 };
 
