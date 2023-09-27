@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 09:36:38 by cbernot           #+#    #+#             */
-/*   Updated: 2023/09/22 11:29:01 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/09/27 11:18:56 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,18 @@ class Character : public ICharacter
 		std::string	_name;
 		AMateria*	_inventory[4];
 	public:
-		Character(void);									// ok
-		Character(std::string name);						// ok
+		Character(void);
+		Character(std::string name);
 		Character(Character const & c);
-		~Character();										// ok
+		~Character();
 		Character&	operator=(Character const & rhs);
-		std::string	const & getName(void) const;			// ok
-		void		equip(AMateria* m);						// ok
-		void		unequip(int idx);						// ok
+		std::string	const & getName(void) const;
+		AMateria*	getInventoryItem(int idx) const;
+		void		equip(AMateria* m);
+		void		unequip(int idx);
 		void		use(int idx, ICharacter& target);
 };
+
+std::ostream&	operator<<(std::ostream& o, Character& rhs);
 
 #endif

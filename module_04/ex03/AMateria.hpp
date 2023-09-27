@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 15:11:49 by cbernot           #+#    #+#             */
-/*   Updated: 2023/09/22 11:52:21 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/09/27 10:52:17 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,6 @@
 # include <iostream>
 # include <string>
 # include "ICharacter.hpp" 
-
-
-/**
- * Classe abstraite : contient une methode pure
- * Defini le comportement des enfants mais ne peut pas elle-meme faire ceraines actions (methodes pures).
- * 
- */
 
 class AMateria {
 	protected:
@@ -34,7 +27,7 @@ class AMateria {
 		
 		AMateria&	operator=(AMateria const & rhs);
 		
-		~AMateria(void);
+		virtual 			~AMateria(void);
 		std::string const &	getType(void) const;
 		virtual AMateria*	clone(void) const = 0;
 		virtual void		use(ICharacter& target);

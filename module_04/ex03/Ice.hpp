@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 15:16:22 by cbernot           #+#    #+#             */
-/*   Updated: 2023/09/22 11:12:15 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/09/27 08:57:14 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class Ice : public AMateria
 
 		Ice&	operator=(Ice const & rhs);
 		virtual void		use(ICharacter& target);
+		virtual AMateria* 	clone(void) const;
 };
 
 #endif

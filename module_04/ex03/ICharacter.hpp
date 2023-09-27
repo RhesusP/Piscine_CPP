@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 09:13:03 by cbernot           #+#    #+#             */
-/*   Updated: 2023/09/22 09:45:53 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/09/27 09:34:37 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <iostream>
 # include <string>
 # include "AMateria.hpp"
+
+class AMateria;
 
 class ICharacter
 {

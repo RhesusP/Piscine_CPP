@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 09:06:02 by cbernot           #+#    #+#             */
-/*   Updated: 2023/09/22 11:16:47 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/09/27 11:27:49 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,10 @@ std::string const & AMateria::getType(void) const {
 	return (this->_type);
 }
 
-void	AMateria::use(ICharacter& target) {}
+AMateria*	AMateria::clone(void) const {
+	return (AMateria*)this;
+
+}
+void	AMateria::use(ICharacter& target) {
+	std::cout << "AMateria (type: " << _type << ") used on " << target.getName() << std::endl; 
+}
