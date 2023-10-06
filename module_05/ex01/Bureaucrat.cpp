@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 00:12:47 by cbernot           #+#    #+#             */
-/*   Updated: 2023/10/04 13:46:43 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/10/04 15:44:50 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ void	Bureaucrat::decrementGrade(void) {
 	else
 		_grade++;
 }
+
 
 std::ostream&	operator<<(std::ostream & o, Bureaucrat & rhs) {
 	o << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << "." << std::endl;
