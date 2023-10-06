@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 00:12:47 by cbernot           #+#    #+#             */
-/*   Updated: 2023/10/04 15:44:50 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/10/06 10:57:14 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,12 @@ void	Bureaucrat::decrementGrade(void) {
 		_grade++;
 }
 
+void	Bureaucrat::signForm(Form & f, std::string reason) const {
+	if (reason == "")
+		std::cout << _name << " signed " << f.getName() << "." << std::endl;
+	else
+		std::cout << _name << " cannot sign " << f.getName() << " because " << reason << "." << std::endl;
+}
 
 std::ostream&	operator<<(std::ostream & o, Bureaucrat & rhs) {
 	o << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << "." << std::endl;
