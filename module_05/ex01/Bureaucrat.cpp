@@ -6,18 +6,18 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 00:12:47 by cbernot           #+#    #+#             */
-/*   Updated: 2023/10/06 10:57:14 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/10/11 11:51:43 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
 const char*	GradeTooHighException::what() const throw() {
-	return ("⚠️  Grade too high.");
+	return ("Grade too high.");
 }
 
 const char*	GradeTooLowException::what() const throw() {
-	return ("⚠️  Grade too low.");
+	return ("Grade too low.");
 }
 
 Bureaucrat::Bureaucrat(void) : _name("default"), _grade(150) {
@@ -60,11 +60,14 @@ void	Bureaucrat::decrementGrade(void) {
 		_grade++;
 }
 
-void	Bureaucrat::signForm(Form & f, std::string reason) const {
-	if (reason == "")
-		std::cout << _name << " signed " << f.getName() << "." << std::endl;
-	else
-		std::cout << _name << " cannot sign " << f.getName() << " because " << reason << "." << std::endl;
+void	Bureaucrat::signForm(Form & f) const {
+	try {
+		f.beSigned(*this);
+		std::cout << _name << " signs " << f.getName() << "." << std::endl;
+	}
+	catch (std::exception & e) {
+		std::cout << _name << " cannot sign " << f.getName() << " because " << e.what() << std::endl;
+	}
 }
 
 std::ostream&	operator<<(std::ostream & o, Bureaucrat & rhs) {

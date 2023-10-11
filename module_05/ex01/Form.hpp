@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 14:19:47 by cbernot           #+#    #+#             */
-/*   Updated: 2023/10/06 10:56:36 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/10/11 11:45:08 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@
 # include "Bureaucrat.hpp"
 
 class Bureaucrat;
+
+class FormAlreadySignedException : public std::exception {
+	public:
+		virtual const char*	what() const throw();
+};
 
 class Form
 {
@@ -38,7 +43,7 @@ class Form
 		unsigned int		getSignGrade(void) const;
 		unsigned int		getExecuteGrade(void) const;
 
-		void				beSigned(Bureaucrat & b);
+		void				beSigned(Bureaucrat const & b);
 };
 
 std::ostream&	operator<<(std::ostream & o, Form const & rhs);

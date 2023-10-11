@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 00:07:20 by cbernot           #+#    #+#             */
-/*   Updated: 2023/10/06 11:08:37 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/10/11 11:51:09 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(void) {
 		Form		form("Form", 100, 100);
 	
 		std::cout << joe << std::endl << form << std::endl;
-		form.beSigned(joe);
+		joe.signForm(form);
 		std::cout << form << std::endl;
 	
 	} catch	(std::exception & e) {
@@ -36,7 +36,7 @@ int	main(void) {
 		Form		form("Form", 100, 100);
 
 		std::cout << slave << std::endl << form << std::endl;
-		form.beSigned(slave);
+		slave.signForm(form);
 		std::cout << form << std::endl;
 	} catch	(std::exception & e) {
 		std::cout << e.what() << std::endl;
@@ -49,9 +49,9 @@ int	main(void) {
 		Form		form("Form", 100, 100);
 	
 		std::cout << joe << std::endl << form << std::endl;
-		form.beSigned(joe);
+		joe.signForm(form);
 		std::cout << form << std::endl;
-		form.beSigned(joe);
+		joe.signForm(form);
 		std::cout << form << std::endl;
 	
 	} catch	(std::exception & e) {
@@ -65,9 +65,9 @@ int	main(void) {
 		Form		form("Form", 151, 100);
 	
 		std::cout << joe << std::endl << form << std::endl;
-		form.beSigned(joe);
+		joe.signForm(form);
 		std::cout << form << std::endl;
-		form.beSigned(joe);
+		joe.signForm(form);
 		std::cout << form << std::endl;
 	
 	} catch	(std::exception & e) {

@@ -6,11 +6,15 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 14:26:28 by cbernot           #+#    #+#             */
-/*   Updated: 2023/10/06 11:06:43 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/10/11 11:51:49 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+
+const char*	FormAlreadySignedException::what() const throw() {
+	return ("Form is already signed.");
+}
 
 Form::Form(void) : _name("Default"), _isSigned(false), _signGrade(150), _executeGrade(150) {
 	std::cout << this << "created" << std::endl;
@@ -55,21 +59,17 @@ unsigned int	Form::getExecuteGrade(void) const {
 	return (_executeGrade);
 }
 
-void	Form::beSigned(Bureaucrat & b) {
-	std::string	reason = "";
-
-	if (!_isSigned && b.getGrade() > _signGrade) {
-		reason = "grade is too low";
+void	Form::beSigned(Bureaucrat const & b) {
+	if (_isSigned) {
+		throw FormAlreadySignedException();
+		return ;
 	}
-	else if (_isSigned) {
-		reason = "form is already signed";
+	else if (b.getGrade() > _signGrade) {
+		throw GradeTooLowException();
+		return ;
 	}
 	else {
 		_isSigned = true;
-	}
-	b.signForm(*this, reason);
-	if (b.getGrade() > _signGrade) {
-		throw GradeTooLowException();
 	}
 }
 
