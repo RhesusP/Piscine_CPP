@@ -6,11 +6,12 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 00:12:47 by cbernot           #+#    #+#             */
-/*   Updated: 2023/10/11 12:22:45 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/10/11 17:57:45 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
 const char*	GradeTooHighException::what() const throw() {
 	return ("Grade too high.");
@@ -67,6 +68,15 @@ void	Bureaucrat::signForm(AForm & f) const {
 	}
 	catch (std::exception & e) {
 		std::cout << _name << " cannot sign " << f.getName() << " because " << e.what() << std::endl;
+	}
+}
+
+void			Bureaucrat::executeForm(AForm const & form) {
+	try {
+		form.execute(*this);
+		std::cout << "Bureaucrat " << _name << " executed a " << form.getName() << std::endl;
+	} catch (std::exception & e) {
+		std::cout << "Bureaucrat " << _name << " failed to executed a " << form.getName() << " because " << e.what() << std::endl;
 	}
 }
 

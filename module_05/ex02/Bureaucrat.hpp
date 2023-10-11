@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 00:07:52 by cbernot           #+#    #+#             */
-/*   Updated: 2023/10/11 12:15:56 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/10/11 17:53:06 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ class Bureaucrat
 		void				incrementGrade(void);
 		void				decrementGrade(void);
 		void				signForm(AForm & f) const;
+		void				executeForm(AForm const & form);
 };
 
 std::ostream&	operator<<(std::ostream & o, Bureaucrat & rhs);

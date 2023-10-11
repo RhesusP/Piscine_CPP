@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 12:06:50 by cbernot           #+#    #+#             */
-/*   Updated: 2023/10/11 12:49:48 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/10/11 17:49:30 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ const std::string &	PresidentialPardonForm::getTarget(void) const {
 }
 
 void	PresidentialPardonForm::execute(Bureaucrat const & executor) const {
-	if (!this->getIsSigned()) {
+	if (this->getIsSigned()) {
 		throw FormAlreadySignedException();
 		return ;
 	}
