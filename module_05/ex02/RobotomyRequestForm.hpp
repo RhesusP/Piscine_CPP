@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 12:45:58 by cbernot           #+#    #+#             */
-/*   Updated: 2023/10/11 17:03:14 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/10/25 11:13:26 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <iostream>
 # include <string>
+# include <stdlib.h>
+# include <time.h>
 # include "AForm.hpp"
 # include "Bureaucrat.hpp"
 

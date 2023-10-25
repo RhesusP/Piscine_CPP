@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 00:12:47 by cbernot           #+#    #+#             */
-/*   Updated: 2023/10/11 17:57:45 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/10/25 10:58:51 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	Bureaucrat::signForm(AForm & f) const {
 	}
 }
 
-void			Bureaucrat::executeForm(AForm const & form) {
+void	Bureaucrat::executeForm(AForm const & form) {
 	try {
 		form.execute(*this);
 		std::cout << "Bureaucrat " << _name << " executed a " << form.getName() << std::endl;

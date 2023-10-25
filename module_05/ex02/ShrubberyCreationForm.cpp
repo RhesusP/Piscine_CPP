@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 17:24:06 by cbernot           #+#    #+#             */
-/*   Updated: 2023/10/11 17:51:10 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/10/25 10:51:41 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 		throw GradeTooLowException();
 		return ;
 	}
-	std::ofstream outfile(_target + "_shrubbery");
+	std::ofstream outfile((_target + "_shrubbery").c_str());
 	outfile << 
 "               ,@@@@@@@," << std::endl <<
 "       ,,,.   ,@@@@@@/@@,  .oo8888o." << std::endl <<
