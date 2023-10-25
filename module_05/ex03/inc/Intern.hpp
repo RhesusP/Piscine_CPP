@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 12:11:05 by cbernot           #+#    #+#             */
-/*   Updated: 2023/10/25 12:46:51 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/10/25 15:26:36 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ class FormNameDoesNotExist : public std::exception {
 
 class Intern
 {
-	private:
-
 	public:
 		Intern(void);
 		Intern(Intern const & i);

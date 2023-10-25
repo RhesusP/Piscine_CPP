@@ -6,19 +6,17 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 12:00:43 by cbernot           #+#    #+#             */
-/*   Updated: 2023/10/25 10:34:35 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/10/25 15:40:24 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AForm.hpp"
+#include "../inc/AForm.hpp"
 
 const char*	FormAlreadySignedException::what() const throw() {
 	return ("Form is already signed.");
 }
 
-AForm::AForm(void) : _name("Default"), _isSigned(false), _signGrade(150), _executeGrade(150) {
-	std::cout << this << "created" << std::endl;
-}
+AForm::AForm(void) : _name("Default"), _isSigned(false), _signGrade(150), _executeGrade(150) {}
 
 AForm::AForm(std::string name, unsigned int sign, unsigned int execute) : _name(name), _isSigned(false), _signGrade(sign), _executeGrade(execute) {
 	if (sign < 1  || execute < 1) {
@@ -27,21 +25,16 @@ AForm::AForm(std::string name, unsigned int sign, unsigned int execute) : _name(
 	else if (sign > 150 || execute > 150) {
 		throw GradeTooLowException();
 	}
-	std::cout << "AForm " << this->_name << " created" << std::endl;
 }
 
-AForm::AForm(AForm const & f) : _name(f.getName()), _isSigned(f.getIsSigned()), _signGrade(f.getSignGrade()), _executeGrade(f.getExecuteGrade()) {
-	std::cout << "AForm " << this->_name << " created by copy constructor" << std::endl;
-}
+AForm::AForm(AForm const & f) : _name(f.getName()), _isSigned(f.getIsSigned()), _signGrade(f.getSignGrade()), _executeGrade(f.getExecuteGrade()) {}
 
 AForm&	AForm::operator=(AForm const & f) {
 	_isSigned = f.getIsSigned();
 	return (*this);
 }
 
-AForm::~AForm(void) {
-	std::cout << "AForm " << this->_name << " destroyed" << std::endl;
-}
+AForm::~AForm(void) {}
 
 const std::string &	AForm::getName(void) const {
 	return (_name);

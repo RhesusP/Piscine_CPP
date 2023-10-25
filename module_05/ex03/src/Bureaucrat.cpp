@@ -6,12 +6,12 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 00:12:47 by cbernot           #+#    #+#             */
-/*   Updated: 2023/10/25 11:53:55 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/10/25 15:40:31 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include "AForm.hpp"
+#include "../inc/Bureaucrat.hpp"
+#include "../inc/AForm.hpp"
 
 const char*	GradeTooHighException::what() const throw() {
 	return ("Grade too high.");

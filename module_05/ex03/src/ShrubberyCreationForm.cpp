@@ -6,28 +6,21 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 17:24:06 by cbernot           #+#    #+#             */
-/*   Updated: 2023/10/25 10:51:41 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/10/25 15:41:05 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ShrubberyCreationForm.hpp"
+#include "../inc/ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(void) : AForm("ShrubberyCreationForm", 145, 137), _target("none") {
-	std::cout << "ShrubberyCreationForm " << this->getName() << " created" << std::endl;
-}
+ShrubberyCreationForm::ShrubberyCreationForm(void) : AForm("ShrubberyCreationForm", 145, 137), _target("none") {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", 145, 137), _target(target) {
-	std::cout << "ShrubberyCreationForm " << this->getName() << " created" << std::endl;
-}
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", 145, 137), _target(target) {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & f) {
 	*this = f;
-	std::cout << "ShrubberyCreationForm " << this->getName() << " created by copy constructor" << std::endl;
 }
 
-ShrubberyCreationForm::~ShrubberyCreationForm(void) { 
-	std::cout << "ShrubberyCreationForm " << this->getName() << " destroyed" << std::endl;
-}
+ShrubberyCreationForm::~ShrubberyCreationForm(void) {}
 
 ShrubberyCreationForm&	ShrubberyCreationForm::operator=(ShrubberyCreationForm const & rhs) {
 	_target = rhs.getTarget();
