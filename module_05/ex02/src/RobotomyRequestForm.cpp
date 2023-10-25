@@ -6,11 +6,11 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 12:47:41 by cbernot           #+#    #+#             */
-/*   Updated: 2023/10/25 12:05:05 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/10/25 16:40:31 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RobotomyRequestForm.hpp"
+#include "../inc/RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm(void) : AForm("RobotomyRequestForm", 72, 45), _target("None") {
 	srand(time(0));

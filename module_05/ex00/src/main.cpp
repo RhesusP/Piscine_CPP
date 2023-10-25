@@ -6,11 +6,11 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 00:07:20 by cbernot           #+#    #+#             */
-/*   Updated: 2023/10/04 14:16:30 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/10/25 16:45:25 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "../inc/Bureaucrat.hpp"
 
 int	main(void) {
 	try {

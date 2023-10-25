@@ -6,11 +6,11 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 12:06:50 by cbernot           #+#    #+#             */
-/*   Updated: 2023/10/11 17:49:30 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/10/25 16:40:27 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PresidentialPardonForm.hpp"
+#include "../inc/PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm(void) : AForm("PresidentialPardonForm", 25, 5), _target("None") {
 	std::cout << "PresidentialPardonForm " << this->getName() << " created" << std::endl;

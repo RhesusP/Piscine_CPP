@@ -6,11 +6,11 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 17:24:06 by cbernot           #+#    #+#             */
-/*   Updated: 2023/10/25 10:51:41 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/10/25 16:40:32 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ShrubberyCreationForm.hpp"
+#include "../inc/ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm(void) : AForm("ShrubberyCreationForm", 145, 137), _target("none") {
 	std::cout << "ShrubberyCreationForm " << this->getName() << " created" << std::endl;

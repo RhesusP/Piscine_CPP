@@ -6,15 +6,15 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 00:07:20 by cbernot           #+#    #+#             */
-/*   Updated: 2023/10/25 11:54:46 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/10/25 16:40:25 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include "AForm.hpp"
-#include "PresidentialPardonForm.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
+#include "../inc/Bureaucrat.hpp"
+#include "../inc/AForm.hpp"
+#include "../inc/PresidentialPardonForm.hpp"
+#include "../inc/ShrubberyCreationForm.hpp"
+#include "../inc/RobotomyRequestForm.hpp"
 
 int	main(void) {
 	Bureaucrat	tom("Tom", 1);
