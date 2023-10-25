@@ -6,17 +6,19 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 12:47:41 by cbernot           #+#    #+#             */
-/*   Updated: 2023/10/25 11:22:55 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/10/25 12:05:05 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm(void) : AForm("RobotomyRequestForm", 72, 45), _target("None") {
+	srand(time(0));
 	std::cout << "RobotomyRequestForm " << this->getName() << " created" << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45), _target(target) {
+	srand(time(0));
 	std::cout << "RobotomyRequestForm " << this->getName() << " created" << std::endl;
 }
 
@@ -48,7 +50,6 @@ void	RobotomyRequestForm::execute(Bureaucrat const & executor) const {
 		return ;
 	}
 	std::cout << "DDDDRRRRrrrRRRRRrrRrRrRRRR" << std::endl;
-	srand(time(0));
 	if (rand() % 2) {
 		std::cout << _target << " has been robotomized" << std::endl;	
 	} else {
