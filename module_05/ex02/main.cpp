@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 00:07:20 by cbernot           #+#    #+#             */
-/*   Updated: 2023/10/25 11:09:42 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/10/25 11:54:46 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,64 @@ int	main(void) {
 	catch (std::exception	& e) {
 		std::cout << "error: " << e.what() << std::endl;
 	}
+
+	std::cout << std::endl << "============ Shrubbery Grade Too Low ❌ ============" << std::endl;
+	try {
+		ShrubberyCreationForm	s("target");
+		luc.executeForm(s);
+	}
+	catch (std::exception	& e) {
+		std::cout << "error: " << e.what() << std::endl;
+	}
 	
+	std::cout << std::endl << "============ Robotomy Grade Too Low ❌ ============" << std::endl;
+	try {
+		RobotomyRequestForm	r("maybe");
+		luc.executeForm(r);
+	}
+	catch (std::exception	& e) {
+		std::cout << "error: " << e.what() << std::endl;
+	}
+
+	std::cout << std::endl << "============ Presidential Pardon Grade Too Low ❌ ============" << std::endl;
+	try {
+		PresidentialPardonForm	p("target");
+		luc.executeForm(p);
+	}
+	catch (std::exception	& e) {
+		std::cout << "error: " << e.what() << std::endl;
+	}
 	
+	std::cout << std::endl << "============ Shrubbery Form Already Sign ❌ ============" << std::endl;
+	try {
+		ShrubberyCreationForm	s("target");
+		tom.signForm(s);
+		tom.executeForm(s);
+	}
+	catch (std::exception	& e) {
+		std::cout << "error: " << e.what() << std::endl;
+	}
+
+	std::cout << std::endl << "============ Robotomy Grade Too Low ❌ ============" << std::endl;
+	try {
+		RobotomyRequestForm	r("maybe");
+		tom.signForm(r);
+		tom.executeForm(r);
+	}
+	catch (std::exception	& e) {
+		std::cout << "error: " << e.what() << std::endl;
+	}
+
+	std::cout << std::endl << "============ Presidential Pardon Grade Too Low ❌ ============" << std::endl;
+	try {
+		PresidentialPardonForm	p("target");
+		tom.signForm(p);
+		tom.executeForm(p);
+	}
+	catch (std::exception	& e) {
+		std::cout << "error: " << e.what() << std::endl;
+	}
 	
-	
-	
-	
-	
-	
+	std::cout << std::endl;
 	return (0);
 }
