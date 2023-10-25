@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 12:17:32 by cbernot           #+#    #+#             */
-/*   Updated: 2023/10/25 12:51:34 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/10/25 13:21:35 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,16 @@ Intern::~Intern(void) {
 }
 
 AForm*	Intern::makeForm(std::string name, std::string target) {
-	void	(PresidentialPardonForm::*presidential)(std::string target);
-	void	(RobotomyRequestForm::*robotomy)(std::string target);
-	void	(ShrubberyCreationForm::*shrubbery)(std::string target);
-
-	void	(void::*constructors[3])(std::string) = {presidential, robotomy, shrubbery};
-	std::string	targets[3] = {"presidential pardon", "robotomy request", "shrubbery creation"};
-
-	std::cout << "make " << name << " with " << target << " as target" << std::endl;
+	AForm*	forms[] = {
+		new PresidentialPardonForm(target),
+		new RobotomyRequestForm(target),
+		new ShrubberyCreationForm(target)
+	};
+	std::string	names[3] = {"presidential pardon", "robotomy request", "shrubbery creation"};
 	
-
-
+	for (int i = 0; i < 3; i++) {
+		if (names[i] == name)
+			return (forms[i]);
+	}
 	return (0);
 }
