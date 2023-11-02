@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 12:22:00 by cbernot           #+#    #+#             */
-/*   Updated: 2023/10/26 12:25:56 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/11/02 15:26:11 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,18 @@
 
 # include <iostream>
 # include <string.h>
+# include <cstdlib>
 
 class ScalarConverter
 {
 	private:
-		/* data */
-	public:
-		ScalarConverter(void);
 		ScalarConverter(ScalarConverter const & s);
 		ScalarConverter&	operator=(ScalarConverter const & s);
+	public:
+		ScalarConverter(void);
 		~ScalarConverter(void);
-		void	convert(const std::string str);
+
+		static void	convert(std::string const & literal);
 };
 
 #endif
