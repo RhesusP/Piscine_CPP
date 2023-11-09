@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 18:24:36 by cbernot           #+#    #+#             */
-/*   Updated: 2023/11/08 12:37:00 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/11/09 16:39:50 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,19 +68,12 @@ void	ScalarConverter::convert(std::string const &literal)
 		std::cout << "double: " << static_cast<double>(literal[0]) << ".0" << std::endl;
 		return;
 	}
-	if (literal.size() > 1 && !isOnlyNumber(literal)) {
-		std::cout << "char: impossible" << std::endl;
-		std::cout << "int: impossible" << std::endl;
-		std::cout << "float: impossible" << std::endl;
-		std::cout << "double: impossible" << std::endl;
-		return;
-	}
 	toInt = std::atoi(literal.c_str());
 
 	toFloat = std::atof(literal.c_str());
 	toDouble = static_cast<double>(toFloat);
 
-	if (isPseudoLiteral(literal) || literal.size() > 1 || toInt > 255 || toInt < 0)
+	if (isPseudoLiteral(literal) || toInt > 255 || toInt < 0)
 	{
 		toChar = "impossible";
 	}
