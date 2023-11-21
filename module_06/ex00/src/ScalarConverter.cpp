@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 18:24:36 by cbernot           #+#    #+#             */
-/*   Updated: 2023/11/08 12:37:00 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/11/21 13:29:07 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,16 @@
 
 ScalarConverter::ScalarConverter(void) {}
 
-ScalarConverter::ScalarConverter(ScalarConverter const &s)
-{
+ScalarConverter::ScalarConverter(ScalarConverter const & s) {
 	*this = s;
 }
 
-ScalarConverter &ScalarConverter::operator=(ScalarConverter const &rhs)
-{
+ScalarConverter&	ScalarConverter::operator=(ScalarConverter const & rhs) {
 	(void)rhs;
 	return *this;
 }
 
-bool	isPseudoLiteral(std::string str)
-{
+bool	isPseudoLiteral(std::string	str) {
 	if (str == "-inff")
 		return true;
 	else if (str == "+inff")
@@ -43,73 +40,62 @@ bool	isPseudoLiteral(std::string str)
 		return false;
 }
 
-bool	isOnlyNumber(std::string const & litteral) {
-	for (size_t i = 0 ; i < litteral.size() ; i++) {
-		if (!isdigit(litteral[i]))
-			return (false);
+bool	ft_isprint(int c) {
+	if (c < 0 || c > 255) {
+		return (false);
 	}
-	return true;
+	else if (isprint(c))
+		return (true);
+	else
+		return (false);
 }
 
 ScalarConverter::~ScalarConverter(void) {}
 
-void	ScalarConverter::convert(std::string const &literal)
-{
-	std::string toChar = "";
-	int		toInt = 0;
-	float	toFloat = 0;
-	double	toDouble = 0;
+void	ScalarConverter::convert(std::string const & literal) {	
+	std::string	toChar		=	"";
+	int			toInt		=	0;
+	float		toFloat		=	0;
+	double		toDouble	=	0;
 
-	if (literal.size() == 1 && isprint(literal[0]) && !isdigit(literal[0]))
+	if (literal.size() == 1 && ft_isprint(literal[0]) &&!isdigit(literal[0]))
 	{
-		std::cout << "char: '" << literal[0] << "'" << std::endl;
+		std::cout << "char: " << "'" << literal[0] << "'" << std::endl;
 		std::cout << "int: " << static_cast<int>(literal[0]) << std::endl;
 		std::cout << "float: " << static_cast<float>(literal[0]) << ".0f" << std::endl;
 		std::cout << "double: " << static_cast<double>(literal[0]) << ".0" << std::endl;
-		return;
+		return ;
 	}
-	if (literal.size() > 1 && !isOnlyNumber(literal)) {
-		std::cout << "char: impossible" << std::endl;
-		std::cout << "int: impossible" << std::endl;
-		std::cout << "float: impossible" << std::endl;
-		std::cout << "double: impossible" << std::endl;
-		return;
-	}
-	toInt = std::atoi(literal.c_str());
-
 	toFloat = std::atof(literal.c_str());
 	toDouble = static_cast<double>(toFloat);
+	toInt = std::atoi(literal.c_str());	
 
-	if (isPseudoLiteral(literal) || literal.size() > 1 || toInt > 255 || toInt < 0)
-	{
+	if (isPseudoLiteral(literal)) {
 		toChar = "impossible";
 	}
 
-	if (toInt > 0 && toChar == "" && toInt <= 255 && toInt >= 0 && isprint(toInt))
-	{
+	if (ft_isprint(toInt)) {
 		toChar = "'";
 		toChar += static_cast<char>(toInt);
 		toChar += "'";
 	}
-	else if (toChar != "impossible")
-	{
+	else if (toChar != "impossible") {
 		toChar = "Non displayable";
 	}
-
 	std::cout << "char: " << toChar << std::endl;
-	if (toDouble < -2147483648 || toDouble > 2147483647)
-		std::cout << "int: impossible" << std::endl;
+	
+
+	long long temp = std::atoll(literal.c_str());
+    if (temp > 2147483647 || temp < -2147483648)
+        std::cout << "int: impossible" << std::endl;
 	else
 		std::cout << "int: " << toInt << std::endl;
 
-	if (toFloat - static_cast<int>(toFloat) == 0)
-	{
-		std::cout << "float: " << toFloat << ".0f" << std::endl;
+	if (toFloat - static_cast<int>(toFloat) == 0) {
+		std::cout << "float: " << toFloat << ".0f" <<std::endl;
 		std::cout << "double: " << toDouble << ".0" << std::endl;
-	}
-	else
-	{
-		std::cout << "float: " << toFloat << "f" << std::endl;
+	} else {
+		std::cout << "float: " << toFloat << "f" <<std::endl;
 		std::cout << "double: " << toDouble << std::endl;
 	}
 }
