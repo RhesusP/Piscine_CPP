@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 11:08:23 by cbernot           #+#    #+#             */
-/*   Updated: 2023/11/08 15:20:09 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/11/09 16:48:38 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class IndexOutOfBoundsException : public std::exception {
 	public:
 		virtual const char* what() const throw();
-}
+};
 
 template<typename T>
 class Array
@@ -31,7 +31,7 @@ class Array
 		Array(unsigned int size);
 		Array(Array const & a);
 		Array&	operator=(Array const & rhs);
-		<T>&	operator[](unsigned int index) const;
+		T&	operator[](unsigned int index) const;
 		~Array(void);
 
 		unsigned int	size(void) const;

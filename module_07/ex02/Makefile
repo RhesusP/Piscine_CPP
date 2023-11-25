@@ -6,20 +6,20 @@
 #    By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/30 17:32:04 by cbernot           #+#    #+#              #
-#    Updated: 2023/11/02 19:00:45 by cbernot          ###   ########.fr        #
+#    Updated: 2023/11/09 16:47:44 by cbernot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY: all clean fclean re
 
-NAME	=	Iter
+NAME	=	Array
 
 # ------------------------------------------------------------------------------
 # ALL FILES
 # ------------------------------------------------------------------------------
 
 # Files
-LST_INC	=	iter.hpp
+LST_INC	=	Array.hpp
 LST_SRC	=	main.cpp
 
 # Directories
