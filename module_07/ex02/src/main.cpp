@@ -5,13 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 19:13:30 by cbernot           #+#    #+#             */
-/*   Updated: 2023/11/02 19:14:20 by cbernot          ###   ########.fr       */
+/*   Created: 2023/11/25 13:46:47 by cbernot           #+#    #+#             */
+/*   Updated: 2023/11/25 18:16:45 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <Array.hpp>
+#include "./../inc/Array.hpp"
 
 #define MAX_VAL 750
 int main(int, char**)
