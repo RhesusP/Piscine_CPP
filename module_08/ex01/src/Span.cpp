@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 14:51:09 by cbernot           #+#    #+#             */
-/*   Updated: 2023/11/28 17:36:52 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/11/28 17:53:57 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,16 @@ Span::Span(void) {
 
 Span::Span(unsigned int n) {
 	_n = n;
+}
+
+Span::Span(Span const & s) {
+	*this = s;
+}
+
+Span&	Span::operator=(Span const & rhs) {
+	_n = rhs.size();
+	_list.clear();
+	_list = std::list<int>(rhs.getList());
 }
 
 Span::~Span(void) {
@@ -66,10 +76,14 @@ std::list<int>	Span::getList(void) const {
 	return _list;
 }
 
+unsigned int	Span::size(void) const {
+	return _n;
+}
+
 unsigned int	Span::shortestSpan(void) {
 	if (_n < 2)
 		throw NotEnoughNumbersException();
-	std::list<int>	copy = _list;
+	std::list<int>	copy = std::list<int>(_list);
 	std::list<int>::iterator it_begin = copy.begin();
 	std::list<int>::iterator it_end = copy.end();
 	unsigned int	distance = UINT_MAX;
@@ -92,7 +106,7 @@ unsigned int	Span::shortestSpan(void) {
 unsigned int	Span::longestSpan(void) {
 	if (_n < 2)
 		throw NotEnoughNumbersException();
-	std::list<int>	copy = _list;
+	std::list<int>	copy = std::list<int>(_list);
 	std::list<int>::iterator it_begin = copy.begin();
 	std::list<int>::iterator it_end = copy.end();
 	unsigned int	distance = 0;

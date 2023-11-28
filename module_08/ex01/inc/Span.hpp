@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 13:14:26 by cbernot           #+#    #+#             */
-/*   Updated: 2023/11/28 17:36:53 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/11/28 17:58:08 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ class Span
 		unsigned int	longestSpan(void);
 
 		std::list<int>	getList(void) const;
+		unsigned int	size(void) const;
 };
 
 #endif
