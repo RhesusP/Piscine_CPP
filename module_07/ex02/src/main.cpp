@@ -6,11 +6,13 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 13:46:47 by cbernot           #+#    #+#             */
-/*   Updated: 2023/11/25 14:00:59 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/11/28 08:07:02 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <stdlib.h>
+#include <time.h>
 #include "./../inc/Array.hpp"
 
 #define MAX_VAL 750
@@ -60,6 +62,6 @@ int main(int, char**)
     {
         numbers[i] = rand();
     }
-    delete [] mirror;//
+    delete [] mirror;
     return 0;
 }

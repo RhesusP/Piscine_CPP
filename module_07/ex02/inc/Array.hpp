@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 11:08:23 by cbernot           #+#    #+#             */
-/*   Updated: 2023/11/25 14:00:37 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/11/28 08:06:47 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ class Array
 		}
 		
 		T&	operator[](unsigned int index) const {
-			if (index > _size)
+			if (index >= _size)
 				throw IndexOutOfBoundsException();
 			return this->_array[index];
 		}
