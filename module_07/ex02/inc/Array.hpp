@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 11:08:23 by cbernot           #+#    #+#             */
-/*   Updated: 2023/11/28 08:06:47 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/11/29 13:31:25 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,13 @@ class Array
 			return *this;
 		}
 		
-		T&	operator[](unsigned int index) const {
+		const T&	operator[](unsigned int index) const {
+			if (index >= _size)
+				throw IndexOutOfBoundsException();
+			return this->_array[index];
+		}
+
+		T&	operator[](unsigned int index) {
 			if (index >= _size)
 				throw IndexOutOfBoundsException();
 			return this->_array[index];
