@@ -6,18 +6,18 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 18:57:26 by cbernot           #+#    #+#             */
-/*   Updated: 2023/11/21 15:47:26 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/11/29 13:23:47 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/iter.hpp"
 #include <string.h>
 
-void	display(int	nb) {
+void	display(int & nb) {
 	std::cout << nb << std::endl;
 }
 
-void	display(std::string str) {
+void	display(std::string & str) {
 	std::cout << str << std::endl;
 }
 

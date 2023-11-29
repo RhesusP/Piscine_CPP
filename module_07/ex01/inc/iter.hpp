@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 18:50:25 by cbernot           #+#    #+#             */
-/*   Updated: 2023/11/28 08:04:21 by cbernot          ###   ########.fr       */
+/*   Updated: 2023/11/29 13:24:26 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,20 @@
 
 # include <iostream>
 
-template<typename T>
-void	iter(T* array, size_t len, void(*f)(T)) {
-	if (len <= 0)
+template<typename T, typename U>
+void	iter(T* array, U len, void(*f)(T &)) {
+	if (len <= 0 || !array || !f)
 		return ;
-	for (size_t i = 0; i < len; i++) {
+	for (U i = 0; i < len; i++) {
+		f(array[i]);
+	}
+}
+
+template<typename T, typename U>
+void	iter(const T* array, U len, void(*f)(const T &)) {
+	if (len <= 0 || !array || !f)
+		return ;
+	for (U i = 0; i < len; i++) {
 		f(array[i]);
 	}
 }
