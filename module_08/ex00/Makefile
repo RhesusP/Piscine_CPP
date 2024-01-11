@@ -6,20 +6,20 @@
 #    By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/30 17:32:04 by cbernot           #+#    #+#              #
-#    Updated: 2023/11/02 18:37:54 by cbernot          ###   ########.fr        #
+#    Updated: 2023/11/28 13:07:05 by cbernot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY: all clean fclean re
 
-NAME	=	Template
+NAME	=	easyfind
 
 # ------------------------------------------------------------------------------
 # ALL FILES
 # ------------------------------------------------------------------------------
 
 # Files
-LST_INC	=	whatever.hpp
+LST_INC	=	easyfind.hpp
 LST_SRC	=	main.cpp
 
 # Directories

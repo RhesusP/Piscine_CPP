@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 18:50:25 by cbernot           #+#    #+#             */
-/*   Updated: 2023/11/29 13:24:26 by cbernot          ###   ########.fr       */
+/*   Created: 2023/11/28 11:56:30 by cbernot           #+#    #+#             */
+/*   Updated: 2023/11/29 13:35:27 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITER_HPP
-# define ITER_HPP
+#ifndef EASYFIND_HPP
+# define EASYFIND_HPP
 
 # include <iostream>
+# include <algorithm>
 
-template<typename T, typename U>
-void	iter(T* array, U len, void(*f)(T &)) {
-	if (len <= 0 || !array || !f)
-		return ;
-	for (U i = 0; i < len; i++) {
-		f(array[i]);
-	}
-}
+class NotFoundException : public std::exception {
+	public: 
+		virtual const char*	what() const throw() {
+			return ("not found 🙃");
+		}		
+};
 
-template<typename T, typename U>
-void	iter(const T* array, U len, void(*f)(const T &)) {
-	if (len <= 0 || !array || !f)
-		return ;
-	for (U i = 0; i < len; i++) {
-		f(array[i]);
+template<typename T>
+typename T::iterator	easyfind(T & t, int n) {
+	typename T::iterator it = std::find(t.begin(), t.end(), n);
+	if (it == t.end()) {
+		throw NotFoundException();
 	}
+	return it;
 }
 
 #endif

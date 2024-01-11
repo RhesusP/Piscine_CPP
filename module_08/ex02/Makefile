@@ -6,20 +6,20 @@
 #    By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/30 17:32:04 by cbernot           #+#    #+#              #
-#    Updated: 2023/11/02 19:00:45 by cbernot          ###   ########.fr        #
+#    Updated: 2023/11/29 13:41:05 by cbernot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY: all clean fclean re
 
-NAME	=	Iter
+NAME	=	MutantStack
 
 # ------------------------------------------------------------------------------
 # ALL FILES
 # ------------------------------------------------------------------------------
 
 # Files
-LST_INC	=	iter.hpp
+LST_INC	=	MutantStack.hpp
 LST_SRC	=	main.cpp
 
 # Directories

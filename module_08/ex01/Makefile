@@ -6,21 +6,21 @@
 #    By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/30 17:32:04 by cbernot           #+#    #+#              #
-#    Updated: 2023/11/25 18:16:08 by cbernot          ###   ########.fr        #
+#    Updated: 2023/11/28 15:53:02 by cbernot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY: all clean fclean re
 
-NAME	=	Array
+NAME	=	Span
 
 # ------------------------------------------------------------------------------
 # ALL FILES
 # ------------------------------------------------------------------------------
 
 # Files
-LST_INC	=	Array.hpp
-LST_SRC	=	main.cpp
+LST_INC	=	Span.hpp
+LST_SRC	=	main.cpp Span.cpp
 
 # Directories
 DIR_INC	=	inc/
