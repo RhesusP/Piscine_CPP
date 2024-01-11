@@ -6,7 +6,7 @@
 #    By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/30 17:32:04 by cbernot           #+#    #+#              #
-#    Updated: 2023/11/29 13:41:05 by cbernot          ###   ########.fr        #
+#    Updated: 2023/12/20 10:17:01 by cbernot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,7 +80,6 @@ $(DIR_OBJ):
 
 # Cleaning
 clean:
-	@$(RM) $(OBJS)
 	@if [ -d "$(DIR_OBJ)" ]; then \
 		$(RM) $(DIR_OBJ); echo "$(ERASE)$(BOLD)$(NAME)$(RESET)$(RED) objects deleted.$(RESET)"; \
 	fi
