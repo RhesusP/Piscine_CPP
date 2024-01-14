@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 12:15:12 by cbernot           #+#    #+#             */
-/*   Updated: 2024/01/12 00:25:47 by cbernot          ###   ########.fr       */
+/*   Updated: 2024/01/14 17:11:57 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,9 @@ bool isDateOk(std::string date)
 		nb = std::atoi(elmt.c_str());
 		if (i == 0 && elmt.length() == 4 && nb >= 0 && nb < 9999)
 			continue;
-		else if ((i == 1 || i == 2) && elmt.length() == 2 && nb > 0 && nb <= 12)
+		else if (i == 1 && elmt.length() == 2 && nb > 0 && nb <= 12)
+			continue;
+		else if (i == 2 && elmt.length() == 2 && nb > 0 && nb <= 31)
 			continue;
 		else
 		{
