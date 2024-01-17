@@ -1,31 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RNP.hpp                                            :+:      :+:    :+:   */
+/*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 17:13:58 by cbernot           #+#    #+#             */
-/*   Updated: 2024/01/14 17:26:38 by cbernot          ###   ########.fr       */
+/*   Updated: 2024/01/17 14:15:42 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RNP_HPP
-#define RNP_HPP
+#ifndef RPN_HPP
+#define RPN_HPP
 
 #include <iostream>
+#include <sstream>
 #include <stack>
+#include <stdlib.h>
+#include <string>
 
-class RNP
+class BadSyntaxException : public std::exception
+{
+public:
+	virtual const char *what() const throw();
+};
+
+class RPN
 {
 private:
 	std::stack<float> _stack;
 
+	void handle_operand(std::string str);
+
 public:
-	RNP(void);
-	RNP(RNP const &r);
-	RNP &operator=(RNP const &rhs);
-	~RNP(void);
+	RPN(void);
+	RPN(std::string input);
+	RPN(RPN &r);
+	RPN &operator=(RPN &rhs);
+
+	std::stack<float> getStack(void);
+	~RPN(void);
 };
+
+std::ostream &operator<<(std::ostream &o, RPN &rhs);
 
 #endif

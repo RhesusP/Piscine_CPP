@@ -6,21 +6,21 @@
 #    By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/30 17:32:04 by cbernot           #+#    #+#              #
-#    Updated: 2024/01/14 17:13:55 by cbernot          ###   ########.fr        #
+#    Updated: 2024/01/17 12:23:47 by cbernot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY: all clean fclean re
 
-NAME	=	RNP
+NAME	=	RPN
 
 # ------------------------------------------------------------------------------
 # ALL FILES
 # ------------------------------------------------------------------------------
 
 # Files
-LST_INC	=	RNP.hpp
-LST_SRC	=	main.cpp RNP.cpp
+LST_INC	=	RPN.hpp
+LST_SRC	=	main.cpp RPN.cpp
 
 # Directories
 DIR_INC	=	inc/
