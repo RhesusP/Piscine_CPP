@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 14:26:01 by cbernot           #+#    #+#             */
-/*   Updated: 2024/01/19 11:49:03 by cbernot          ###   ########.fr       */
+/*   Updated: 2024/01/25 21:22:47 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <sstream>
 #include <vector>
 #include <list>
+#include <deque>
 #include <stdlib.h>
 
 class BadParameterException : public std::exception
@@ -29,10 +30,12 @@ public:
 class PmergeMe
 {
 private:
-	/* data */
+	std::deque<unsigned int> _deque;
+	std::list<unsigned int> _list;
+
 public:
 	PmergeMe(void);
-	PmergeMe(int *array);
+	PmergeMe(char** tab, int size);
 	PmergeMe(PmergeMe &p);
 	PmergeMe &operator=(PmergeMe &rhs);
 	~PmergeMe();
