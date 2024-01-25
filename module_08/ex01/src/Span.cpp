@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 14:51:09 by cbernot           #+#    #+#             */
-/*   Updated: 2024/01/11 11:16:33 by cbernot          ###   ########.fr       */
+/*   Updated: 2024/01/25 11:44:01 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,16 @@ unsigned int Span::shortestSpan(void)
 	if (_n < 2)
 		throw NotEnoughNumbersException();
 	std::list<int> copy = std::list<int>(_list);
+	copy.sort();
+
+	// std::list<int>::iterator it_one = copy.begin();
+	// std::list<int>::iterator it_two = copy.end();
+	// while (it_one != it_two)
+	// {
+	// 	std::cout << *it_one << std::endl;
+	// 	++it_one;
+	// }
+
 	std::list<int>::iterator it_begin = copy.begin();
 	std::list<int>::iterator it_end = copy.end();
 	unsigned int distance = UINT_MAX;
@@ -129,25 +139,11 @@ unsigned int Span::longestSpan(void)
 	if (_n < 2)
 		throw NotEnoughNumbersException();
 	std::list<int> copy = std::list<int>(_list);
+	copy.sort();
 	std::list<int>::iterator it_begin = copy.begin();
 	std::list<int>::iterator it_end = copy.end();
-	unsigned int distance = 0;
-	unsigned int new_dist;
-	int prev = *it_begin;
-	++it_begin;
-	int curr;
-	while (it_begin != it_end)
-	{
-		curr = *it_begin;
-		new_dist = abs(curr - prev);
-		if (new_dist > distance)
-		{
-			distance = new_dist;
-		}
-		prev = *it_begin;
-		++it_begin;
-	}
-	return (distance);
+	--it_end;
+	return (*it_end - *it_begin);
 }
 
 std::ostream &operator<<(std::ostream &o, Span const &rhs)
