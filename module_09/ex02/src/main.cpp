@@ -6,11 +6,18 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 14:25:01 by cbernot           #+#    #+#             */
-/*   Updated: 2024/01/19 11:52:47 by cbernot          ###   ########.fr       */
+/*   Updated: 2024/01/25 14:33:10 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/PmergeMe.hpp"
+
+unsigned int	stoul(std::string str)
+{
+	unsigned int u;
+	std::istringstream(str) >> u;
+	return (u); 
+}
 
 unsigned int *parse_args(char **argv, int size)
 {
@@ -24,7 +31,8 @@ unsigned int *parse_args(char **argv, int size)
 			if (!isdigit(str[i]))
 				throw BadParameterException();
 		}
-		// std::stoul()
+		unsigned int u = stoul(str);
+		std::cout << u << std::endl;
 	}
 	return 0;
 }
@@ -33,7 +41,7 @@ int main(int argc, char **argv)
 {
 	if (argc == 1)
 		return (0);
-	int *tab = parse_args(&argv[1], <sta argc - 1);
+	unsigned int *tab = parse_args(&argv[1], argc - 1);
 
 	return (0);
 }
