@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 14:26:01 by cbernot           #+#    #+#             */
-/*   Updated: 2024/01/25 21:22:47 by cbernot          ###   ########.fr       */
+/*   Updated: 2024/01/26 11:15:39 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,9 @@ public:
 	PmergeMe(PmergeMe &p);
 	PmergeMe &operator=(PmergeMe &rhs);
 	~PmergeMe();
+
+	void	ListFordJohnsonSort(void);
+	void	DequeFordJohnsonSort(void);
 };
 
 #endif
