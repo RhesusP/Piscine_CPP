@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 14:25:51 by cbernot           #+#    #+#             */
-/*   Updated: 2024/01/31 21:09:22 by cbernot          ###   ########.fr       */
+/*   Updated: 2024/02/01 10:55:08 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,6 +151,10 @@ std::vector<unsigned int> &VectorFordJohnsonSort(std::vector<unsigned int> &vect
 // = PmergeMe Class Functions
 // ==============================
 
+PmergeMe::PmergeMe(void)
+{
+}
+
 /**
  * @brief Constructs PmergeMe object by converting an array of char* to unsigned integer and storing them in a vector and a list
  *
@@ -182,6 +186,29 @@ PmergeMe::PmergeMe(char **tab, int size)
 	}
 }
 
+PmergeMe::PmergeMe(PmergeMe &p)
+{
+	*this = p;
+}
+
+PmergeMe &PmergeMe::operator=(PmergeMe &rhs)
+{
+	_vector.clear();
+	_list.clear();
+
+	for (size_t i = 0; i < _vector.size(); i++)
+		_vector.push_back(rhs._vector[i]);
+
+	std::list<unsigned int>::iterator it_beg = rhs._list.begin();
+	std::list<unsigned int>::iterator it_end = rhs._list.end();
+	while (it_beg != it_end)
+	{
+		_list.push_back(*it_beg);
+		++it_beg;
+	}
+	return *this;
+}
+
 /**
  * @brief Destroy a PmergeMe object by clearing its vector and list
  *
@@ -203,12 +230,12 @@ void PmergeMe::sort(void)
 	clock_t startL = clock();
 	ListFordJohnsonSort(this->_list);
 	clock_t endL = clock();
-	double durationL = static_cast<double>(endL - startL) / static_cast<double>CLOCKS_PER_SEC * 100000;
+	double durationL = static_cast<double>(endL - startL) / static_cast<double> CLOCKS_PER_SEC * 100000;
 
 	clock_t startV = clock();
 	VectorFordJohnsonSort(this->_vector);
 	clock_t endV = clock();
-	double durationV = static_cast<double>(endV - startV) / static_cast<double>CLOCKS_PER_SEC * 100000;
+	double durationV = static_cast<double>(endV - startV) / static_cast<double> CLOCKS_PER_SEC * 100000;
 
 	std::cout << "After : " << _vector << std::endl;
 
@@ -217,7 +244,7 @@ void PmergeMe::sort(void)
 }
 
 // ===================================
-// = Output stream Overload Functions
+// = Output stream overload Functions
 // ===================================
 
 /**
