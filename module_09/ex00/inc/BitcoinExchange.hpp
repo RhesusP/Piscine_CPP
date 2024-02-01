@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 12:05:35 by cbernot           #+#    #+#             */
-/*   Updated: 2024/01/12 00:25:50 by cbernot          ###   ########.fr       */
+/*   Updated: 2024/02/01 10:24:58 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,20 @@ public:
 	virtual const char *what() const throw();
 };
 
+class BadDateException : public std::exception
+{
+public:
+	virtual const char *what() const throw();
+};
+
 class BitcoinExchange
 {
 private:
 	std::map<std::string, float> _map;
-	BitcoinExchange(BitcoinExchange &b);
 
 public:
 	BitcoinExchange(void);
+	BitcoinExchange(BitcoinExchange &b);
 	BitcoinExchange &operator=(BitcoinExchange &rhs);
 	~BitcoinExchange(void);
 	std::map<std::string, float> getMap(void) const;
@@ -48,6 +54,7 @@ public:
 	void printValue(std::string date, float rate);
 };
 
+bool isDate(std::string date);
 std::ostream &operator<<(std::ostream &o, BitcoinExchange &rhs);
 
 #endif

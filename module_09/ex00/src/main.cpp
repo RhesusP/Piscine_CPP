@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 12:15:12 by cbernot           #+#    #+#             */
-/*   Updated: 2024/01/14 17:11:57 by cbernot          ###   ########.fr       */
+/*   Updated: 2024/02/01 10:24:53 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,37 +18,6 @@ bool onlyDigit(std::string s)
 	{
 		if (!isdigit(s[i]))
 			return false;
-	}
-	return true;
-}
-
-bool isDateOk(std::string date)
-{
-	std::stringstream ss(date);
-	std::string elmt;
-	int nb;
-	int i = -1;
-	while (!ss.eof())
-	{
-		i++;
-		getline(ss, elmt, '-');
-		if (!onlyDigit(elmt))
-		{
-			std::cout << "Error: bad input => " << date << std::endl;
-			return false;
-		}
-		nb = std::atoi(elmt.c_str());
-		if (i == 0 && elmt.length() == 4 && nb >= 0 && nb < 9999)
-			continue;
-		else if (i == 1 && elmt.length() == 2 && nb > 0 && nb <= 12)
-			continue;
-		else if (i == 2 && elmt.length() == 2 && nb > 0 && nb <= 31)
-			continue;
-		else
-		{
-			std::cout << "Error: bad input => " << date << std::endl;
-			return false;
-		}
 	}
 	return true;
 }
@@ -68,11 +37,16 @@ float isRateOk(std::string rate)
 
 void getValue(BitcoinExchange *exchange, std::string line)
 {
-	int delimiter = line.find(" | ");
+	size_t delimiter = line.find(" | ");
+	if (delimiter == std::string::npos)
+	{
+		std::cout << "Error: bad input => " << line << std::endl;
+		return;
+	}
 	std::string date = line.substr(0, delimiter);
 	std::string rate = line.substr(delimiter + 3, line.length());
 	float ratef = isRateOk(rate);
-	if (isDateOk(date) && ratef >= 0)
+	if (isDate(date) && ratef >= 0)
 	{
 		exchange->printValue(date, ratef);
 	}
