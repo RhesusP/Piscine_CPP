@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 12:11:44 by cbernot           #+#    #+#             */
-/*   Updated: 2024/02/01 10:24:56 by cbernot          ###   ########.fr       */
+/*   Updated: 2024/02/01 10:28:50 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -232,7 +232,7 @@ void BitcoinExchange::printValue(std::string date, float rate)
 }
 
 // ===================================
-// = Output stream overload Functions
+// = Output stream overload functions
 // ===================================
 
 std::ostream &operator<<(std::ostream &o, BitcoinExchange &rhs)
