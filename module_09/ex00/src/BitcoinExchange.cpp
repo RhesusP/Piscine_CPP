@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 12:11:44 by cbernot           #+#    #+#             */
-/*   Updated: 2024/02/02 08:51:39 by cbernot          ###   ########.fr       */
+/*   Updated: 2024/02/02 16:59:47 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -204,31 +204,20 @@ void BitcoinExchange::map_insert(std::pair<std::string, float> pair)
  * The total value is printed with a fixed number of decimal places (2).
  *
  * @param date The date to find the value for
- * @param rate The amount of Bitcoin to find the value for
+ * @param amount The amount of Bitcoin to find the value for
  */
-void BitcoinExchange::printValue(std::string date, float rate)
+void BitcoinExchange::printValue(std::string date, float amount)
 {
-	std::map<std::string, float>::iterator it_begin = _map.begin();
-	std::map<std::string, float>::iterator it_end = _map.end();
-	std::map<std::string, float>::reverse_iterator it_2_last = _map.rbegin();
+	std::map<std::string, float>::iterator it = _map.lower_bound(date);	
 	float value = 0.0f;
-	if (date <= it_begin->first)
-		value = it_begin->second;
-	if (date >= it_2_last->first)
-		value = it_2_last->second;
+	
+	if (it == _map.begin())
+		value = _map.begin()->second;
+	else if (it->first == date)
+		value = it->second;
 	else
-	{
-		while (it_begin != it_end)
-		{
-			if (it_begin->first >= date)
-			{
-				value = it_begin->second;
-				break;
-			}
-			++it_begin;
-		}
-	}
-	std::cout << date << " => " << rate << " = " << std::fixed << std::setprecision(2) << rate * value << std::endl;
+		value = (--it)->second;
+	 std::cout << date << " => " << amount << " = " << std::fixed << std::setprecision(2) << amount * value << std::endl;
 }
 
 // ===================================
