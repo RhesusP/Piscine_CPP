@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 14:25:51 by cbernot           #+#    #+#             */
-/*   Updated: 2024/02/01 10:55:08 by cbernot          ###   ########.fr       */
+/*   Updated: 2024/02/02 17:14:51 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,8 @@ std::vector<unsigned int> &VectorFordJohnsonSort(std::vector<unsigned int> &vect
 		return vector;
 
 	std::vector<unsigned int> odd, even;
+	odd.reserve(vector.size() / 2);
+	even.reserve(vector.size() / 2);
 
 	for (size_t i = 0; i < vector.size(); i++)
 	{
@@ -164,21 +166,16 @@ PmergeMe::PmergeMe(void)
  */
 PmergeMe::PmergeMe(char **tab, int size)
 {
+	_vector.reserve(size);
 	for (int i = 0; i < size; i++)
 	{
 		std::string str(tab[i]);
-		if (str.size() > 10)
-		{
-			std::cerr << "case 1" << std::endl;
+		if (str.size() > 10 || str.size() < 1)
 			throw BadParameterException();
-		}
 		for (size_t j = 0; j < str.size(); j++)
 		{
 			if (!isdigit(str[j]))
-			{
-				std::cerr << "case 2" << std::endl;
 				throw BadParameterException();
-			}
 		}
 		unsigned int u = ::stoul(str);
 		_vector.push_back(u);
