@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 12:11:44 by cbernot           #+#    #+#             */
-/*   Updated: 2024/02/01 10:28:50 by cbernot          ###   ########.fr       */
+/*   Updated: 2024/02/02 08:51:39 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ bool isDate(std::string date)
 		std::cout << "Error: bad input => " << date << std::endl;
 		return false;
 	}
-	if ((month == 4 || month == 6 || month == 9 || month == 11) && (day < 1 && day > 30))
+	if ((month == 4 || month == 6 || month == 9 || month == 11) && (day < 1 || day > 30))
 	{
 		std::cout << "Error: bad input => " << date << std::endl;
 		return false;
