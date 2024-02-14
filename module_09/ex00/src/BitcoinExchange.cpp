@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 12:11:44 by cbernot           #+#    #+#             */
-/*   Updated: 2024/02/02 16:59:47 by cbernot          ###   ########.fr       */
+/*   Updated: 2024/02/14 11:44:18 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,13 @@ const char *BadDateException::what() const throw()
  */
 int stoi(std::string const &s)
 {
+	if (s.size() == 0)
+		return -1;
+	for (size_t i = 0; i < s.size() ; i++)
+	{
+		if (!isdigit(s[i]))
+			return -1;
+	}
 	int i;
 	std::istringstream(s) >> i;
 	return i;
@@ -159,7 +166,6 @@ BitcoinExchange::BitcoinExchange(void)
 BitcoinExchange::BitcoinExchange(BitcoinExchange &b)
 {
 	*this = b;
-	(void)b;
 }
 
 /**

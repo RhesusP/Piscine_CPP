@@ -6,7 +6,7 @@
 /*   By: cbernot <cbernot@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 12:15:12 by cbernot           #+#    #+#             */
-/*   Updated: 2024/02/01 10:24:53 by cbernot          ###   ########.fr       */
+/*   Updated: 2024/02/14 11:47:04 by cbernot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,30 @@ bool onlyDigit(std::string s)
 
 float isRateOk(std::string rate)
 {
-	long double rateld = std::strtold(rate.c_str(), 0);
 	float res = -1.0f;
+	if (rate.size() == 0)
+		return res;
+	bool point_found = false;
+	for (size_t i = 0 ; i < rate.size() ; i++)
+	{
+		if (rate[i] == '.' && !point_found)
+			point_found = true;
+		else if (rate[i] == '.' && point_found)
+			return -1.0f;
+		if (!isdigit(rate[i]) && rate[i] != '.')
+			return -1.0f;
+	}
+	long double rateld = std::strtold(rate.c_str(), 0);
 	if (rateld < 0.0)
+	{
 		std::cout << "Error: not a positive number => " << rate << std::endl;
+		return -2.0f;
+	}
 	if (rateld > 1000.0)
+	{
 		std::cout << "Error: too large a number => " << rate << std::endl;
+		return -2.0f;
+	}
 	else
 		res = (float)rateld;
 	return res;
@@ -37,6 +55,8 @@ float isRateOk(std::string rate)
 
 void getValue(BitcoinExchange *exchange, std::string line)
 {
+	if (line.size() == 0)
+		return ;
 	size_t delimiter = line.find(" | ");
 	if (delimiter == std::string::npos)
 	{
@@ -46,7 +66,12 @@ void getValue(BitcoinExchange *exchange, std::string line)
 	std::string date = line.substr(0, delimiter);
 	std::string rate = line.substr(delimiter + 3, line.length());
 	float ratef = isRateOk(rate);
-	if (isDate(date) && ratef >= 0)
+	if (ratef == -1.0f)
+	{
+		std::cout << "Error: bad value => " << line << std::endl;
+		return ;
+	}
+	if (isDate(date) && ratef >= 0.0f)
 	{
 		exchange->printValue(date, ratef);
 	}
